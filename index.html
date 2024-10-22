@@ -3,33 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body>
+    <h1>めもあぷり</h1>
     <div class="all-area">
-        <h1>めもあぷり</h1>
         <div class="describe-area">
             <div class="title-area">
                 <h3>メモのタイトル</h3>
-                <input type="text" id="TitleInput" value="ここにメモのタイトルを入力">
+                <input type="text" placeholder="メモのタイトルを入力" id="TitleInput" class="txt" value="">
             </div>
             <div class="content-area">
                 <h3>メモの内容</h3>
-                <input type="text" id="ContentInput" value="ここにメモの内容を入力">
+                <input type="text" placeholder="メモの内容を入力" id="ContentInput" class="txt" value="">
             </div>
             <div class="button-area">
-                <button onclick="AddText();"></button>>上記の入力内容をメモ一覧へ追加</button>
+                <button class="btn tooltip btn1" onclick="AddTextMemo()">
+                    <span class="tooltip-text">上記の内容をメモ一覧に追加します。</span>
+                    メモ追加
+                </button>
+                <button class="btn tooltip btn2" onclick="DeleteMemo()">
+                    <span class="tooltip-text">直近で作成したメモを一覧から削除します。</span>
+                    メモ削除
+                </button>
+                <button class="btn tooltip btn3" onclick="CopyMemo()">
+                    <span class="tooltip-text">直近で作成したメモのタイトル名と内容をコピーします。</span>
+                    メモ内容をコピー
+                </button>
             </div>
         </div>
         <div class="list-area">
+            <h3>メモの一覧</h3>
             <ul>
-                <li>
-                    メモのタイトル
-                    <p>メモの内容</p>
+                <li class="list-0">
+                    <div class="text-box">
+                        <h4 class="list-title">例 メモのタイトル</h4>
+                        <p class="list-content">┗メモの内容</p>
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
-    <script></script>
+    <script src="index.js"></script>
 </body>
 </html>
