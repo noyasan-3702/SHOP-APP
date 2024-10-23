@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="index.css" rel="stylesheet" type="text/css">
-    <title>メモするアプリ</title>
+    <title>めもあぷり</title>
 </head>
 <body>
-    <h1>めもあぷり</h1>
+    <header class="header">
+        <h1>Memo</h1>
+    </header>
     <div class="all-area">
         <div class="describe-area">
             <div class="title-area">
@@ -20,16 +22,16 @@
             </div>
             <div class="button-area">
                 <button class="btn tooltip btn1" onclick="AddTextMemo()">
-                    <span class="tooltip-text">上記の内容をメモ一覧に追加します。</span>
+                    <span class="tooltip-text">上記の内容を<br>メモ一覧に追加します。</span>
                     メモ追加
                 </button>
                 <button class="btn tooltip btn2" onclick="DeleteMemo()">
-                    <span class="tooltip-text">直近で作成したメモを一覧から削除します。</span>
+                    <span class="tooltip-text">直近で作成した<br>メモを一覧から削除します。</span>
                     メモ削除
                 </button>
                 <button class="btn tooltip btn3" onclick="CopyMemo()">
-                    <span class="tooltip-text">直近で作成したメモのタイトル名と内容をコピーします。</span>
-                    メモ内容をコピー
+                    <span class="tooltip-text">直近で作成したメモの<br>タイトル名と内容をコピーします。</span>
+                    メモコピ
                 </button>
             </div>
         </div>

@@ -8,9 +8,13 @@ const MemoList = {Title: "例 メモのタイトル",Content: "┗メモの内�
  */
 function AddTextMemo() {
 
+    // 各<input>タグをオブジェクトとして取得
+    const input_title = document.getElementById('TitleInput');
+    const input_content = document.getElementById('ContentInput');
+
     // 各inputタグから タイトル名 と メモの内容 を取得する。
-    const new_title = document.getElementById('TitleInput').value;
-    const new_content = document.getElementById('ContentInput').value;
+    const new_title = input_title.value;
+    const new_content = input_content.value;
     console.log(new_title)
     console.log(new_content)
 
@@ -39,6 +43,10 @@ function AddTextMemo() {
         
         // <ul>に新しい<li>を追加
         document.querySelector('.list-area ul').appendChild(newLi);
+
+        // 各inputタグのタイトル名とメモの内容をリセットする
+        input_title.value = "";
+        input_content.value = "";
     }
 }
 
@@ -94,6 +102,6 @@ function CopyMemo() {
 
         // 各<input>タグに取得した値を貼り付ける
         input_title.value = Copy_title;
-        input_content.value = Copy_content;
+        input_content.value = Copy_content.substring(1, Copy_content.length);
     }
 }
