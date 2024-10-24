@@ -2,23 +2,14 @@
 // メモ一覧の配列を作成
 const MemoList = {Title: "例 メモのタイトル",Content: "┗メモの内容"}
 
-/**メモ追加
- * 各inputタグから タイトル名 と メモの内容 を取得後、
- * list-area内に要素を新規作成して値をブチ込む。
+/** 要素と値の追加
+ * メモ一覧に要素と取得した値を追加する。
+ * @param {String} new_title 
+ * @param {String} new_content 
  */
-function AddTextMemo() {
+function Add_text(new_title,new_content) {
 
-    // 各<input>タグをオブジェクトとして取得
-    const input_title = document.getElementById('TitleInput');
-    const input_content = document.getElementById('ContentInput');
-
-    // 各inputタグから タイトル名 と メモの内容 を取得する。
-    const new_title = input_title.value;
-    const new_content = input_content.value;
-    console.log(new_title)
-    console.log(new_content)
-
-    // 各inputタグのタイトル名とメモの内容が何かしら記載されていたら？
+    // タイトル名とメモの内容が何かしら記載されていたら？
     if (new_title != "" && new_content != "") {
 
         // 新しい<li>要素を作成して、クラスを追加
@@ -43,11 +34,45 @@ function AddTextMemo() {
         
         // <ul>に新しい<li>を追加
         document.querySelector('.list-area ul').appendChild(newLi);
-
-        // 各inputタグのタイトル名とメモの内容をリセットする
-        input_title.value = "";
-        input_content.value = "";
     }
+}
+
+/**メモ追加
+ * 各inputタグから タイトル名 と メモの内容 を取得後、
+ * list-area内に要素を新規作成して値をブチ込む。
+ */
+function AddTextMemo() {
+
+    // 各<input>タグをオブジェクトとして取得
+    const input_title = document.getElementById('TitleInput');
+    const input_content = document.getElementById('ContentInput');
+
+    // 各inputタグから タイトル名 と メモの内容 を取得する。
+    const new_title = input_title.value;
+    const new_content = input_content.value;
+    console.log(new_title)
+    console.log(new_content)
+
+    // メモ一覧に要素と取得した値を追加する。
+    Add_text(new_title,new_content)
+
+    // 各<input>タグを内容をリセットする。
+    input_title.value = ""
+    input_content.value = ""
+}
+
+/**メモをリセット
+ * 各<input>タグの内容をリセットする
+ */
+function ResetMemo() {
+
+    // 各<input>タグをオブジェクトとして取得
+    const input_title = document.getElementById('TitleInput');
+    const input_content = document.getElementById('ContentInput');
+
+    // inputタグの内容をリセットする
+    input_title.value = ""
+    input_content.value = ""
 }
 
 /**メモ削除
@@ -104,4 +129,71 @@ function CopyMemo() {
         input_title.value = Copy_title;
         input_content.value = Copy_content.substring(1, Copy_content.length);
     }
+}
+
+/**ポップアップを開く
+ * ポップアップを開いて、前の画面の<input>タグのタイトル名とメモ内容を
+ * ポップアップ内のテキストボックス内に反映させる
+ */
+function openPopup() {
+
+    // ポップアップを開く
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+
+    // ポップアップ内の各<textarea>タグをオブジェクトとして取得
+    const Popup_title = document.getElementById('Title_textarea');
+    const Popup_content = document.getElementById('Content_textarea');
+
+    // 各<input>タグをオブジェクトとして取得
+    const input_title = document.getElementById('TitleInput');
+    const input_content = document.getElementById('ContentInput');
+
+    // inputタグの内容をポップアップ内に反映
+    Popup_title.value = input_title.value
+    Popup_content.value = input_content.value
+}
+
+/**ポップアップ内の情報を保存する
+ * ポップアップ内で確認・編集された内容を保存して、
+ * 前の画面の<input>タグにポップアップの内容を反映させて閉じる
+ */
+function PopupSaveText() {
+
+    // ポップアップ内の各<textarea>タグをオブジェクトとして取得
+    const Popup_title = document.getElementById('Title_textarea');
+    const Popup_content = document.getElementById('Content_textarea');
+
+    // 各<input>タグをオブジェクトとして取得
+    const input_title = document.getElementById('TitleInput');
+    const input_content = document.getElementById('ContentInput');
+
+    // inputタグの内容をポップアップ内に反映
+    input_title.value = Popup_title.value
+    input_content.value = Popup_content.value
+
+    // ポップアップを閉じる
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
+
+function PopupSaveAddText() {
+
+    // ポップアップ内の各<textarea>タグをオブジェクトとして取得
+    const Popup_title = document.getElementById('Title_textarea');
+    const Popup_content = document.getElementById('Content_textarea');
+
+
+
+    // ポップアップを閉じる
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
+
+/** ポップアップを閉じる */ 
+function closePopup() {
+
+    // ポップアップを閉じる
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
 }
