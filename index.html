@@ -21,7 +21,7 @@
                 <input type="text" placeholder="メモの内容を入力" id="ContentInput" class="txt" value="">
                 <button class="tooltip Popup-btn" onclick="openPopup()">
                     <span class="tooltip-text">上記の内容を<br>より大きな画面で確認・編集します。</span>
-                    Popupを表示
+                    <b>メモの確認・編集</b>
                 </button>
                 <div class="overlay" id="overlay"></div>
                 <div id="popup">
@@ -39,19 +39,19 @@
                     <div class="popup_button-area">
                         <button class="tooltip btn btn5" onclick="PopupSaveText()">
                             <span class="tooltip-text">確認・編集した内容を<br>保存して前の画面へ戻ります。</span>
-                            決定
+                            <b>決定</b>
                         </button>
                         <button class="tooltip btn btn6" onclick="PopupSaveAddText()">
                             <span class="tooltip-text">確認・編集した内容を<br>保存してメモ一覧に追加します。</span>
-                            追加
+                            <b>追加</b>
                         </button>
-                        <button class="tooltip btn btn7" onclick="confirmedPopup()">
+                        <button class="tooltip btn btn7" onclick="PopupDeleteText()">
                             <span class="tooltip-text">直近で作成した<br>メモを一覧から削除します</span>
-                            削除
+                            <b>削除</b>
                         </button>
-                        <button class="tooltip btn btn8" onclick="confirmedPopup()">
+                        <button class="tooltip btn btn8" onclick="PopupCopyText()">
                             <span class="tooltip-text">直近で作成したメモの<br>タイトル名と内容をコピーします。</span>
-                            コピー
+                            <b>コピー</b>
                         </button>
                     </div>
                 </div>
@@ -59,19 +59,19 @@
             <div class="button-area">
                 <button class="btn tooltip btn1" onclick="AddTextMemo()">
                     <span class="tooltip-text">上記の内容を<br>メモ一覧に追加します。</span>
-                    メモ追加
+                    <b>メモ追加</b>
                 </button>
                 <button class="btn tooltip btn2" onclick="ResetMemo()">
                     <span class="tooltip-text">タイトル名と内容を<br>全てリセットします。</span>
-                    リセット
+                    <b>リセット</b>
                 </button>
                 <button class="btn tooltip btn3" onclick="DeleteMemo()">
                     <span class="tooltip-text">直近で作成した<br>メモを一覧から削除します。</span>
-                    メモ削除
+                    <b>メモ削除</b>
                 </button>
                 <button class="btn tooltip btn4" onclick="CopyMemo()">
                     <span class="tooltip-text">直近で作成したメモの<br>タイトル名と内容をコピーします。</span>
-                    メモコピ
+                    <b>メモコピ</b>
                 </button>
             </div>
         </div>

@@ -96,6 +96,10 @@
     display: inline-block;
     width: 180px;
     max-width: 100%;
+    transition: color 0.2s ease, transform 0.2s ease; /* 拡大のアニメーション */
+}
+.txt:hover {
+    transform: scale(1.05); /* ボタンを5%大きくする */
 }
 
 
@@ -117,27 +121,45 @@
     display: none; /* 初期状態は非表示 */
 }
 
+/* ポップアップ内部のレイアウト */
 .popup_Box {
     width: 490px;
 }
+/* メモタイトルの内部レイアウト */ 
 .popup_1 {
     padding: 20px;
 }
+/* メモ内容の内部レイアウト */
 .popup_2 {
     padding: 20px;
 }
 
+/* ポップアップ内部のテキストボックスのレイアウト */
 .popup_txt {
     width: 100%; /* 横幅を固定 */
     resize: vertical; /* 縦方向にのみリサイズ可能 */
 }
+
+/* メモタイトルのテキストボックスのレイアウト */
 .t1 {
     min-height: 20px; /* テキストエリアの最小高さ */
     max-height: 60px; /* テキストエリアの最大高さ */
+    transition: color 0.2s ease, transform 0.2s ease; /* 拡大のアニメーション */
 }
+/* ホバー時の挙動 */
+.t1:hover {
+    transform: scale(1.05); /* ボタンを5%大きくする */
+}
+
+/* メモ内容のテキストボックスのレイアウト */
 .t2 {
     min-height: 60px; /* テキストエリアの最小高さ */
     max-height: 250px; /* テキストエリアの最大高さ */
+    transition: color 0.2s ease, transform 0.2s ease; /* 拡大のアニメーション */
+}
+/* ホバー時の挙動 */
+.t2:hover {
+    transform: scale(1.05); /* ボタンを5%大きくする */
 }
 
 /* Popup内のボタン表示エリア */
@@ -162,6 +184,13 @@
     padding: 4px;
     cursor: pointer;
     text-align: center;
+    transition: color 0.2s ease, transform 0.2s ease; /* 文字色と拡大のアニメーション */
+    font-weight: normal; /* デフォルトの文字の太さ */
+}
+/* ホバー時の挙動 */
+.close-btn:hover {
+    transform: scale(1.05); /* ボタンを5%大きくする */
+    font-weight: bold; /* 文字を太くする */
 }
 
 /* Popup内のその他のボタンCSS*/
@@ -189,6 +218,32 @@
     border-radius:4px;
     text-align:center;
     border: none;
+    transition: transform 0.2s ease, color 0.2s ease; /* アニメーションの追加 */
+}
+/* ボタンのhover時の挙動 */
+.Popup-btn:hover {
+    transform: translateY(-5px); /* 上に5px移動して浮き上がる */
+    color: black; /* 文字色を黒に変更 */
+}
+/* ボタンの背景変更用の::before疑似要素 */
+.Popup-btn::before {
+    content: '';
+    position: absolute;
+    top: 100%; /* 初期位置をボタンの下に設定 */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius:4px;
+    background-color: #FFA500; /* ホバー時の背景色 */
+    transition: top 0.3s ease; /* 背景のスライドアニメーション */
+    z-index: -1; /* テキストより背面に配置 */
+    display: none; /* 初期状態は非表示 */
+}
+/* ホバー時に::beforeを上にスライド */
+.Popup-btn:hover::before {
+    display:block;
+    border-radius:4px;
+    top: 0; /* ボタン全体を覆うように配置 */
 }
 
 /* オーバーレイ（画面全体に薄い白色の背景） */
@@ -215,6 +270,7 @@
     width: 270px;
     height: 180px;
 }
+/* ボタンのレイアウト */
 .btn {
     margin-left: 5px;
     margin-right: 5px;
@@ -223,6 +279,31 @@
     height: 25px;
     border-radius:4px;
     border: none;
+    transition: transform 0.2s ease, color 0.2s ease; /* アニメーションの追加 */
+}
+/* ホバー時の挙動 */
+.btn:hover {
+    transform: translateY(-5px); /* 上に5px移動して浮き上がる */
+    color: black; /* 文字色を黒に変更 */
+}
+/* ボタンの背景変更用の::before疑似要素 */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 100%; /* 初期位置をボタンの下に設定 */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFA500; /* ホバー時の背景色 */
+    transition: top 0.3s ease; /* 背景のスライドアニメーション */
+    z-index: -1; /* テキストより背面に配置 */
+    display: none; /* 初期状態は非表示 */
+}
+/* ホバー時に::beforeを上にスライド */
+.btn:hover::before {
+    display:block;
+    border-radius:4px;
+    top: 0; /* ボタン全体を覆うように配置 */
 }
 
 /* ボタンのCSS*/
