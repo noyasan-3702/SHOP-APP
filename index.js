@@ -81,6 +81,10 @@ function AddTextMemo() {
     const input_title = document.getElementById('TitleInput');
     const input_content = document.getElementById('ContentInput');
 
+    // ポップアップ内の各<textarea>タグをオブジェクトとして取得
+    const Popup_title = document.getElementById('Title_textarea');
+    const Popup_content = document.getElementById('Content_textarea');
+
     // 各inputタグから タイトル名 と メモの内容 を取得する。
     const new_title = input_title.value;
     const new_content = input_content.value;
@@ -93,6 +97,10 @@ function AddTextMemo() {
     // 各<input>タグの内容をリセットする。
     input_title.value = ""
     input_content.value = ""
+
+    // 各<textarea>タグの内容をリセットする。
+    Popup_title.value = ""
+    Popup_content.value = ""
 }
 
 /**メモをリセット
@@ -205,6 +213,10 @@ function PopupSaveAddText() {
     const Popup_title = document.getElementById('Title_textarea');
     const Popup_content = document.getElementById('Content_textarea');
 
+    // 各<input>タグをオブジェクトとして取得
+    const input_title = document.getElementById('TitleInput');
+    const input_content = document.getElementById('ContentInput');
+
     // 各<textarea>タグから タイトル名 と メモの内容 を取得する。
     const new_title = Popup_title.value;
     const new_content = Popup_content.value;
@@ -217,6 +229,10 @@ function PopupSaveAddText() {
     // 各<textarea>タグの内容をリセットする。
     Popup_title.value = ""
     Popup_content.value = ""
+
+    // 各<input>タグの内容をリセットする。
+    input_title.value = ""
+    input_content.value = ""
 }
 
 /**メモ削除

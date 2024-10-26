@@ -7,8 +7,10 @@
     <title>めもあぷり</title>
 </head>
 <body>
-    <header class="header">
-        <h1>Memo</h1>
+    <header>
+        <div class="header">
+            <h1>Memo</h1>
+        </div>
     </header>
     <div class="all-area">
         <div class="describe-area">
@@ -23,38 +25,6 @@
                     <span class="tooltip-text">上記の内容を<br>より大きな画面で確認・編集します。</span>
                     <b>メモの確認・編集</b>
                 </button>
-                <div class="overlay" id="overlay"></div>
-                <div id="popup">
-                    <div class="popup_Box">
-                        <div class="popup_1">
-                            <h2>メモのタイトル</h2>
-                            <textarea name="name" placeholder="メモのタイトルを入力" id="Title_textarea" class="popup_txt t1" value=""></textarea>
-                        </div>
-                        <div class="popup_2">
-                            <h2>メモの内容</h2>
-                            <textarea name="name" placeholder="メモの内容を入力" id="Content_textarea" class="popup_txt t2" value=""></textarea>
-                        </div>
-                    </div>
-                    <button class="close-btn" onclick="closePopup()">✕</button>
-                    <div class="popup_button-area">
-                        <button class="tooltip btn btn5" onclick="PopupSaveText()">
-                            <span class="tooltip-text">確認・編集した内容を<br>保存して前の画面へ戻ります。</span>
-                            <b>決定</b>
-                        </button>
-                        <button class="tooltip btn btn6" onclick="PopupSaveAddText()">
-                            <span class="tooltip-text">確認・編集した内容を<br>保存してメモ一覧に追加します。</span>
-                            <b>追加</b>
-                        </button>
-                        <button class="tooltip btn btn7" onclick="PopupDeleteText()">
-                            <span class="tooltip-text">直近で作成した<br>メモを一覧から削除します</span>
-                            <b>削除</b>
-                        </button>
-                        <button class="tooltip btn btn8" onclick="PopupCopyText()">
-                            <span class="tooltip-text">直近で作成したメモの<br>タイトル名と内容をコピーします。</span>
-                            <b>コピー</b>
-                        </button>
-                    </div>
-                </div>
             </div>
             <div class="button-area">
                 <button class="btn tooltip btn1" onclick="AddTextMemo()">
@@ -72,6 +42,38 @@
                 <button class="btn tooltip btn4" onclick="CopyMemo()">
                     <span class="tooltip-text">直近で作成したメモの<br>タイトル名と内容をコピーします。</span>
                     <b>メモコピ</b>
+                </button>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div id="popup">
+            <div class="popup_Box">
+                <div class="popup_1">
+                    <h2>メモのタイトル</h2>
+                    <textarea name="name" placeholder="メモのタイトルを入力" id="Title_textarea" class="popup_txt t1" value=""></textarea>
+                </div>
+                <div class="popup_2">
+                    <h2>メモの内容</h2>
+                    <textarea name="name" placeholder="メモの内容を入力" id="Content_textarea" class="popup_txt t2" value=""></textarea>
+                </div>
+            </div>
+            <button class="close-btn" onclick="closePopup()">✕</button>
+            <div class="popup_button-area">
+                <button class="tooltip btn btn5" onclick="PopupSaveText()">
+                    <span class="tooltip-text">確認・編集した内容を<br>保存して前の画面へ戻ります。</span>
+                    <b>決定</b>
+                </button>
+                <button class="tooltip btn btn6" onclick="PopupSaveAddText()">
+                    <span class="tooltip-text">確認・編集した内容を<br>保存してメモ一覧に追加します。</span>
+                    <b>追加</b>
+                </button>
+                <button class="tooltip btn btn7" onclick="PopupDeleteText()">
+                    <span class="tooltip-text">直近で作成した<br>メモを一覧から削除します</span>
+                    <b>削除</b>
+                </button>
+                <button class="tooltip btn btn8" onclick="PopupCopyText()">
+                    <span class="tooltip-text">直近で作成したメモの<br>タイトル名と内容をコピーします。</span>
+                    <b>コピー</b>
                 </button>
             </div>
         </div>

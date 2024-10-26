@@ -194,9 +194,6 @@
 }
 
 /* Popup内のその他のボタンCSS*/
-.btn4 {
-    background-color:darkkhaki;
-}
 .btn5 {
     background-color: burlywood;
 }
@@ -205,6 +202,9 @@
 }
 .btn7 {
     background-color: rgb(171, 179, 60);
+}
+.btn8 {
+    background-color:skyblue;
 }
 
 /* ポップアップを表示させるボタン */
@@ -315,6 +315,9 @@
 }
 .btn3 {
     background-color: rgb(171, 179, 60);
+}
+.btn4 {
+    background-color:darkkhaki;
 }
 
 
